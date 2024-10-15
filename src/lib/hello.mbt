@@ -8,9 +8,6 @@ let harvest_tone : Tone = Tone::new((262, 0), @wasm4.ADSR::new(10), @wasm4.ADSRV
 
 pub fn start() -> Unit {
   @wasm4.set_draw_colors(index=1, 2)
-
-
-
 }
 
 pub fn update() -> Unit {
