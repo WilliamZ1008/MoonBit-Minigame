@@ -9,6 +9,6 @@ pub fn judge_stage(game: Game) -> Unit {
   if game.frame_count >= config_FRAME_COUNT {
     game.frame_count = 0
     game.score = 0
-    game.state = 1
+    game.state = 2
   }
 }
