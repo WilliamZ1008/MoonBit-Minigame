@@ -1,5 +1,7 @@
-# moonbit/demo
+# Kun Kun catches the egg
 
+## Run
+```shell
 moon build --target wasm
 npx wasm4 run .\target\wasm\release\build\lib\lib.wasm
 
@@ -13,3 +15,4 @@ npx wasm4 bundle --html game.html .\target\wasm\release\build\lib\lib.wasm
     0b01111110,
     0b00000000,
     0b00000000,
+```
