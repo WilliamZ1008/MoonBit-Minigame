@@ -12,6 +12,7 @@ pub struct Game {
   mut frame_count: UInt
   mut fruits: Array[Position]
   mut score: Int
+  mut state: UInt
 }
 
 pub fn Game::new() -> Game {
@@ -19,7 +20,8 @@ pub fn Game::new() -> Game {
     max_fruits: 10,
     frame_count: 0U,
     fruits: [],
-    score: 0
+    score: 0,
+    state: 0U
   }
 }
 
