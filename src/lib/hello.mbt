@@ -12,7 +12,7 @@ pub fn start() -> Unit {
 pub fn update() -> Unit {
   if game.state == 0{
     // 播放音乐
-    play_music(game.frame_count)
+    // play_music(game.frame_count)
 
     // 检测按键移动 kunkun
     move_kunkun(pos, turn)
@@ -40,6 +40,7 @@ pub fn update() -> Unit {
     // 显示结束
     @wasm4.text("You Win!", 50, 60)
     @wasm4.blit(get_sprite(game.frame_count, 10, 10), 55, 90, 50, 50, {one_bit_per_pixel: true, flip_x: false, flip_y: false, rotate: false})
+    play_kun_music(game.frame_count)
     game.frame_count += 1
   }
 
