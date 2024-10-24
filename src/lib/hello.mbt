@@ -22,6 +22,8 @@ pub fn update() -> Unit {
 
     // 绘制角色
     @wasm4.blit(smiley_sprite, pos.x, pos.y, 8, 8, {one_bit_per_pixel: false, flip_x: false, flip_y: turn.value, rotate: true})
+    // @wasm4.blit(get_sprite(game.frame_count, 10, 10), pos.x, pox.y, 50, 50, {one_bit_per_pixel: true, flip_x: false, flip_y: false, rotate: false})
+
     
     // 显示 Score
     @wasm4.text("Score: " + game.score.to_string(), 0, 0)
@@ -37,6 +39,8 @@ pub fn update() -> Unit {
   else if game.state == 1{
     // 显示结束
     @wasm4.text("You Win!", 50, 60)
+    @wasm4.blit(get_sprite(game.frame_count, 10, 10), 55, 90, 50, 50, {one_bit_per_pixel: true, flip_x: false, flip_y: false, rotate: false})
+    game.frame_count += 1
   }
 
   else{
