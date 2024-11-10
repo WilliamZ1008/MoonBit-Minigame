@@ -18,7 +18,7 @@ pub fn random_fruit(pos: Position, game: Game)  -> Unit{
       continue
     }
 
-    game.fruits[i].y += 1
+    game.fruits[i].y += game.egg_speed
     if game.fruits[i].y > 135 {
       game.fruits[i].x = random.int(limit=155)
       game.fruits[i].y = 20

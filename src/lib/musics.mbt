@@ -20,8 +20,8 @@ let kun_music : Array[(UInt, UInt)]  = [(0, 523), (45, 523), (2, 659), (22, 659)
 let kun_music_info : MusicInfo = MusicInfo::new()
 
 pub fn play_kun_music(frame_count : UInt) -> Unit {
-  //@wasm4.text((kun_music_info.offset + kun_music[kun_music_info.note_i].0 - frame_count).to_string(), 0, 100)
-  while kun_music_info.note_i < kun_music.length() && frame_count - kun_music_info.offset == kun_music[kun_music_info.note_i].0 {
+  // @wasm4.text((kun_music_info.offset + kun_music[kun_music_info.note_i].0 - frame_count - 10).to_string(), 0, 100)
+  while kun_music_info.note_i < kun_music.length() && frame_count - kun_music_info.offset - 10== kun_music[kun_music_info.note_i].0 {
     @wasm4.trace((kun_music_info.note_i + 1).to_string() + "/" + kun_music.length().to_string())
     @wasm4.tone((kun_music[kun_music_info.note_i].1, kun_music[kun_music_info.note_i].1), @wasm4.ADSR::new(10), @wasm4.ADSRVolume::new(10), @wasm4.ToneFlag::new())
     kun_music_info.offset += kun_music[kun_music_info.note_i].0
@@ -32,4 +32,9 @@ pub fn play_kun_music(frame_count : UInt) -> Unit {
     kun_music_info.note_i = 0
     kun_music_info.offset = frame_count + 50
   }
+}
+
+pub fn reset_kun_music() -> Unit {
+  kun_music_info.note_i = 0
+  kun_music_info.offset = 0
 }

@@ -1,14 +1,14 @@
 pub fn judge_stage(game: Game) -> Unit {
   // 判断结束或难度增加
-  if game.score >= config_CLEARANCE_SCORE {
+  if game.score >= game.clearance_score {
     game.frame_count = 0
     game.score = 0
-    game.state = 1
+    game.state = GameState::Win
   }
   // frame_count
-  if game.frame_count >= config_FRAME_COUNT {
+  if game.frame_count >= game.level_max_frame_count {
     game.frame_count = 0
     game.score = 0
-    game.state = 2
+    game.state = GameState::Lose
   }
 }

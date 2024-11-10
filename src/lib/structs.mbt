@@ -12,7 +12,19 @@ pub struct Game {
   mut frame_count: UInt
   mut fruits: Array[Position]
   mut score: Int
-  mut state: UInt
+  mut state: GameState
+  mut level: Int
+  mut clearance_score: Int
+  mut level_max_frame_count: UInt
+  mut egg_speed: Int
+  mut sprite_speed: Int
+}
+
+pub enum GameState {
+  Intro
+  Playing
+  Win
+  Lose
 }
 
 pub fn Game::new() -> Game {
@@ -21,7 +33,12 @@ pub fn Game::new() -> Game {
     frame_count: 0U,
     fruits: [],
     score: 0,
-    state: 0U
+    state: GameState::Intro,
+    level: 0,
+    clearance_score: 10,
+    level_max_frame_count: 1000U,
+    egg_speed: 1,
+    sprite_speed: 1
   }
 }
 

@@ -2,8 +2,7 @@
   "name": "moonbit/demo",
   "version": "0.1.0",
   "deps": {
-    "moonbitlang/wasm4": "0.2.2",
-    "gmlewis/flate": "0.13.0"
+    "moonbitlang/wasm4": "0.2.2"
   },
   "readme": "README.md",
   "repository": "",

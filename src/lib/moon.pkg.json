@@ -1,7 +1,6 @@
 {
     "import": [
-      "moonbitlang/wasm4",
-      "gmlewis/flate"
+      "moonbitlang/wasm4"
     ],
     "link": {
       "wasm": {
